@@ -1,0 +1,38 @@
+{
+    "name": "isszz/think-lock",
+    "description": "thinkphp6+ lock based on symfony lock",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "isszz",
+            "email": "isszz@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.2",
+        "symfony/lock": "^6.0",
+        "topthink/framework": "8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\lock\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev-dev"
+        },
+        "think": {
+            "services":[
+                "think\\lock\\Service"
+            ],
+            "config": {
+                "locker": "src/config/config.php"
+            }
+        }
+    }
+}
