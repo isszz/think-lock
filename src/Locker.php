@@ -45,14 +45,14 @@ class Locker
      * @param string|null $prefix 锁前缀
      * @return LockInterface
      */
-	public function lock(string $key, ?float $ttl = null, ?bool $autoRelease = null, ?string $prefix = null)
-	{
+    public function lock(string $key, ?float $ttl = null, ?bool $autoRelease = null, ?string $prefix = null)
+    {
         $ttl = $ttl ?: ($this->config['ttl'] ?? 300);
         $autoRelease = $autoRelease ?: ($this->config['auto_release'] ?? true);
         $prefix = $prefix ?: ($this->config['prefix'] ?? 'lock_');
 
         return $this->getFactory()->createLock($prefix . $key, $ttl, $autoRelease);
-	}
+    }
 
     protected function getFactory()
     {
