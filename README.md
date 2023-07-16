@@ -1,6 +1,6 @@
 
 # think-lock
-thinkphp8 lock based on symfony lock
+thinkphp6+ lock based on symfony lock
 
 <p>
     <a href="https://packagist.org/packages/isszz/think-lock"><img src="https://img.shields.io/badge/php->=8.0-8892BF.svg" alt="Minimum PHP Version"></a>
@@ -17,7 +17,7 @@ composer require isszz/think-lock
 ```
 
 ## 说明
-目前支持 `File`, `Redis`, `PDO`驱动
+目前支持 `File`，`Redis`，`PDO`驱动，安装后可在`config/locker.php`配置
 
 ## 使用
 
