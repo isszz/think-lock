@@ -9,7 +9,11 @@ class File implements Driver
     /**
      * @var driver
      */
-    protected $driver;
+    protected $driver = null;
+    
+    /**
+     * @var path
+     */
     protected $path;
 
     public function __construct($options)
@@ -19,7 +23,7 @@ class File implements Driver
 
     public function getDriver()
     {
-        if (!$this->driver) {
+        if (is_null($this->driver)) {
             $this->driver = new FlockStore($this->path);
         }
 
