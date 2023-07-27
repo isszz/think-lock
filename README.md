@@ -75,11 +75,8 @@ return [
 
 ## 使用
 
+facade方式
 ```php
-<?php
-
-namespace app\index\controller;
-
 use think\lock\facade\Locker;
 
 class Index
@@ -105,6 +102,20 @@ class Index
     }
 }
 
+```
+依赖注入方式
+```php
+use think\lock\Locker;
+
+class Index
+{
+    public function add(Locker $locker)
+    {
+        $locker = $locker->lock('test', ttl: 5);
+
+        // ...
+    }
+}
 ```
 
 ## 更多操作参考 symfony/lock 文档
